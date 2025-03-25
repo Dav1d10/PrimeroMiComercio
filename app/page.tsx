@@ -1,25 +1,25 @@
-import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import TestimonialSlider from "@/components/testimonial-slider"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-black text-white">
       {/* Navbar */}
-      <nav className="flex items-center justify-between border-b border-zinc-800 px-4 py-4 md:px-6">
-        <div className="flex items-center space-x-8">
-          <Link href="/" className="text-sm font-medium">
+      <nav className="flex flex-col sm:flex-row items-center justify-between border-b border-zinc-800 px-4 py-4 md:px-6">
+        <div className="flex items-center space-x-4 sm:space-x-8 mb-4 sm:mb-0 overflow-x-auto w-full sm:w-auto">
+          <Link href="/" className="text-sm font-medium whitespace-nowrap">
             Inicio
           </Link>
-          <Link href="#funcionalidades" className="text-sm font-medium">
+          <Link href="#funcionalidades" className="text-sm font-medium whitespace-nowrap">
             Funcionalidades
           </Link>
-          <Link href="#precios" className="text-sm font-medium">
+          <Link href="#precios" className="text-sm font-medium whitespace-nowrap">
             Precios
           </Link>
-          <Link href="#testimonios" className="text-sm font-medium">
+          <Link href="#testimonios" className="text-sm font-medium whitespace-nowrap">
             Testimonios
           </Link>
         </div>
@@ -32,9 +32,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-16 md:px-6 lg:px-8">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-12 md:py-16 md:px-6 lg:px-8">
         <div className="flex flex-col justify-center space-y-6">
-          <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl sm:text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
             Optimiza la Rentabilidad de tu negocio en minutos
           </h1>
           <p className="text-zinc-400 max-w-md">
@@ -42,7 +42,7 @@ export default function Home() {
             más inteligentes sin necesidad de conocimientos contables avanzados.
           </p>
           <div>
-            <Button className="bg-green-500 hover:bg-green-600">Prueba Gratis / Empieza Ahora</Button>
+            <Button className="bg-green-500 hover:bg-green-600 w-full sm:w-auto">Prueba Gratis / Empieza Ahora</Button>
           </div>
         </div>
         <div className="flex items-center justify-center">
@@ -85,9 +85,9 @@ export default function Home() {
       </section>
 
       {/* Main Features */}
-      <section className="py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
+      <section className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">La mejor solución contable para pequeños negocios</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">La mejor solución contable para pequeños negocios</h2>
           <p className="text-zinc-600 mb-8">Beneficios clave para optimizar tu tiempo y finanzas</p>
           <p className="text-zinc-600 mb-12 max-w-3xl mx-auto">
             Automatiza y simplifica la gestión financiera de tu empresa. Optimiza tu tiempo y toma decisiones más
@@ -95,7 +95,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           <div className="p-6 border border-zinc-200 rounded-lg">
             <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
               <ChevronRight className="h-6 w-6 text-zinc-700" />
@@ -139,37 +139,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonios" className="py-16 px-4 md:px-6 lg:px-8 bg-zinc-900">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-8">¡Escucha a nuestros usuarios!</h2>
-            <div className="mb-8">
-              <blockquote className="text-xl mb-4">
-                "Pude ahorrar tiempo con el manejo de mis finanzas gracias a ustedes"
-              </blockquote>
-              <p className="text-zinc-400">Dolly, Dueña de una panadería de barrio</p>
-            </div>
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-              <div className="w-2 h-2 bg-zinc-600 rounded-full"></div>
-              <div className="w-2 h-2 bg-zinc-600 rounded-full"></div>
-            </div>
-          </div>
-          <div className="relative h-80 bg-zinc-800 rounded-lg overflow-hidden">
-            <Image
-              src="/placeholder.svg?height=400&width=500"
-              alt="Testimonio de usuario"
-              width={500}
-              height={400}
-              className="object-cover h-full w-full"
-            />
-          </div>
-        </div>
+      <section id="testimonios" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-zinc-900">
+        <TestimonialSlider />
       </section>
 
       {/* How it Works */}
-      <section id="funcionalidades" className="py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
-        <h2 className="text-3xl font-bold mb-12">Cómo Funciona</h2>
+      <section id="funcionalidades" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 md:mb-12">Cómo Funciona</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="space-y-8">
@@ -215,13 +191,13 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button className="bg-green-500 hover:bg-green-600">¡Regístrate Ahora!</Button>
+          <Button className="bg-green-500 hover:bg-green-600 w-full sm:w-auto">¡Regístrate Ahora!</Button>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-12 px-4 md:px-6 lg:px-8 bg-black text-white border-t border-zinc-800">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-8">
           <div>
             <h3 className="font-medium mb-4">Redes</h3>
             <ul className="space-y-2">
