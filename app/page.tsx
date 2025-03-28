@@ -41,8 +41,11 @@ export default function Home() {
             Reduce el tiempo de análisis financiero, visualiza tus márgenes de ganancia en segundos y toma decisiones
             más inteligentes sin necesidad de conocimientos contables avanzados.
           </p>
-          <div>
-            <Button className="bg-green-500 hover:bg-green-600 w-full sm:w-auto">Prueba Gratis / Empieza Ahora</Button>
+          <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in ">
+              <Button size="lg" className="group">
+                Empieza Ahora
+                <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
           </div>
         </div>
         <div className="flex items-center justify-center">
