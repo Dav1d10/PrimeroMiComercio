@@ -16,7 +16,7 @@ export default function LoginPage() {
   // Redirige si ya hay sesión
   useEffect(() => {
     if (session) {
-      router.push("/");
+      router.push("/chatbot.html");  // Redirigir al chatbot.html si ya está autenticado
     }
   }, [session, router]);
 
@@ -29,13 +29,14 @@ export default function LoginPage() {
       email,
       password,
       redirect: false,
-      callbackUrl: "/",
+      callbackUrl: "/chatbot.html",  // Redirigir a chatbot.html después del login
     });
 
     if (result?.error) {
       setError("Credenciales inválidas. Inténtalo de nuevo.");
     } else if (result?.ok) {
-      // La redirección se manejará en el useEffect al detectar la sesión
+      // Redirigir al chatbot.html directamente después de inicio de sesión exitoso
+      router.push("/chatbot.html");
     }
   }
 
@@ -78,6 +79,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-
-
