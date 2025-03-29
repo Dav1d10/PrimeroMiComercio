@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
+import { ClientButton } from "@/app/clientButton"
 
 import { Button } from "@/components/ui/button"
 import TestimonialSlider from "@/components/testimonial-slider"
@@ -42,10 +43,7 @@ export default function Home() {
             más inteligentes sin necesidad de conocimientos contables avanzados.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in ">
-              <Button size="lg" className="group">
-                Empieza Ahora
-                <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <ClientButton />
           </div>
         </div>
         <div className="flex items-center justify-center">
