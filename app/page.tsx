@@ -1,5 +1,8 @@
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import Image from "next/image"
+// Importa tus nuevos iconos
+import { Lock, SquareArrowUpRight, Hand } from "lucide-react"
+
 import { ClientButton } from "@/app/clientButton"
 import TestimonialSlider from "@/components/testimonial-slider"
 
@@ -26,7 +29,7 @@ export default function Home() {
           <Link href="/login" className="text-sm font-medium">
             Login
           </Link>
-          <button className="btn-green">Prueba Ahora</button>
+          <ClientButton />
         </div>
       </nav>
 
@@ -44,41 +47,16 @@ export default function Home() {
             <ClientButton />
           </div>
         </div>
+
+        {/* Ejemplo de imagen en el Hero */}
         <div className="flex items-center justify-center">
           <div className="relative w-full max-w-md h-80 bg-zinc-700 rounded-lg overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-32 h-32 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-4xl font-bold">$</span>
-              </div>
-              <div className="absolute right-10 bottom-10">
-                <div className="w-20 h-40 relative">
-                  <div className="absolute bottom-0 w-full">
-                    <div className="h-20 w-4 bg-green-600 inline-block mx-1"></div>
-                    <div className="h-16 w-4 bg-green-600 inline-block mx-1"></div>
-                    <div className="h-24 w-4 bg-green-600 inline-block mx-1"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute right-0 top-0 bottom-0 flex items-center">
-                <div className="w-24 h-64 relative">
-                  <div className="absolute bottom-0 w-full flex flex-col items-center">
-                    <div className="w-12 h-12 bg-green-700 rounded-full mb-2"></div>
-                    <div className="w-8 h-32 bg-purple-900"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute left-10 top-10">
-                <div className="w-16 h-48">
-                  <div className="w-1 h-48 bg-green-600 relative">
-                    <div className="absolute w-6 h-6 bg-green-500 rounded-full -left-3 top-0"></div>
-                    <div className="absolute w-10 h-3 bg-green-500 -left-5 top-10 rotate-45"></div>
-                    <div className="absolute w-10 h-3 bg-green-500 -left-5 top-20 rotate-45"></div>
-                    <div className="absolute w-10 h-3 bg-green-500 -left-5 top-30 rotate-45"></div>
-                    <div className="absolute w-10 h-3 bg-green-500 -left-5 top-40 rotate-45"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/images/IMAGEN1.jpg"
+              alt="Ilustración financiera"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -89,7 +67,9 @@ export default function Home() {
           <h2 className="features-title text-2xl sm:text-3xl font-bold mb-4">
             La mejor solución contable para pequeños negocios
           </h2>
-          <p className="features-subtitle text-zinc-600 mb-8">Beneficios clave para optimizar tu tiempo y finanzas</p>
+          <p className="features-subtitle text-zinc-600 mb-8">
+            Beneficios clave para optimizar tu tiempo y finanzas
+          </p>
           <p className="features-description text-zinc-600 mb-12">
             Automatiza y simplifica la gestión financiera de tu empresa. Optimiza tu tiempo y toma decisiones más
             inteligentes con nuestra plataforma de contabilidad simplificada.
@@ -97,9 +77,10 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+          {/* Análisis Financiero Automático */}
           <div className="p-6 border border-zinc-200 rounded-lg">
             <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <ChevronRight className="h-6 w-6 text-zinc-700" />
+              <SquareArrowUpRight className="h-6 w-6 text-zinc-700" />
             </div>
             <h3 className="font-medium text-lg mb-2">Análisis Financiero Automático</h3>
             <p className="text-zinc-600">
@@ -107,9 +88,10 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Seguridad y Confianza */}
           <div className="p-6 border border-zinc-200 rounded-lg">
             <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <ChevronRight className="h-6 w-6 text-zinc-700" />
+              <Lock className="h-6 w-6 text-zinc-700" />
             </div>
             <h3 className="font-medium text-lg mb-2">Seguridad y Confianza</h3>
             <p className="text-zinc-600">
@@ -117,9 +99,10 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Sin Conocimientos Contables */}
           <div className="p-6 border border-zinc-200 rounded-lg">
             <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <ChevronRight className="h-6 w-6 text-zinc-700" />
+              <Hand className="h-6 w-6 text-zinc-700" />
             </div>
             <h3 className="font-medium text-lg mb-2">Sin Conocimientos Contables</h3>
             <p className="text-zinc-600">
@@ -130,7 +113,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto mt-12">
           <p className="features-note text-zinc-700">
-            No automatizar tu análisis financiero podría estar costándole mucho más a tu negocio de lo que imaginas.
+            No automatizar tu análisis financiero podría costarte hasta un 10% de tus ingresos mensuales.
           </p>
           <p className="features-note text-zinc-700 mt-2">
             Las decisiones poco informadas aumentan los gastos, reducen los márgenes y te alejan de la rentabilidad
@@ -141,6 +124,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section id="testimonios" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-zinc-900">
+        {/* Aquí aparece el slider con 3 imágenes que cambian */}
         <TestimonialSlider />
       </section>
 
@@ -192,7 +176,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <button className="btn-green">¡Regístrate Ahora!</button>
+          <ClientButton />
         </div>
       </section>
 
@@ -223,8 +207,8 @@ export default function Home() {
           <div>
             <h3 className="font-medium mb-4">Contacto</h3>
             <ul>
-              <li className="text-zinc-400">57-3193099393</li>
-              <li className="text-zinc-400">info@plataforma.edu.co</li>
+              <li className="text-zinc-400">57-3193909393</li>
+              <li className="text-zinc-400">at.vargasc1@uniandes.edu.co</li>
             </ul>
           </div>
 
@@ -275,4 +259,3 @@ export default function Home() {
     </main>
   )
 }
-
