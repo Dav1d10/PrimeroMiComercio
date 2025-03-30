@@ -53,6 +53,25 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        black: "#000000",
+        white: "#ffffff",
+        zinc: {
+          100: "#f4f4f5",
+          200: "#e4e4e7",
+          400: "#a1a1aa",
+          600: "#52525b",
+          700: "#3f3f46",
+          800: "#27272a",
+          900: "#18181b",
+        },
+        green: {
+          500: "#10b981",
+          600: "#059669",
+          700: "#047857",
+        },
+        purple: {
+          900: "#581c87",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

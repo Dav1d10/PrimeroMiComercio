@@ -63,14 +63,22 @@ export default function TestimonialSlider() {
             {testimonials[currentIndex].author}, {testimonials[currentIndex].role}
           </p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-4">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentIndex ? "bg-white" : "bg-zinc-600 hover:bg-zinc-400"
-              }`}
+              className="navigation-dot"
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor: index === currentIndex ? "#ffffff" : "#52525b",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+              }}
               aria-label={`Ver testimonio ${index + 1}`}
             />
           ))}
@@ -80,9 +88,8 @@ export default function TestimonialSlider() {
         <Image
           src={testimonials[currentIndex].image || "/placeholder.svg?height=400&width=500"}
           alt={`Testimonio de ${testimonials[currentIndex].author}`}
-          width={500}
-          height={400}
-          className="object-cover h-full w-full"
+          fill
+          className="object-cover"
         />
       </div>
     </div>

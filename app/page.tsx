@@ -1,8 +1,6 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { ClientButton } from "@/app/clientButton"
-
-import { Button } from "@/components/ui/button"
 import TestimonialSlider from "@/components/testimonial-slider"
 
 export default function Home() {
@@ -28,7 +26,7 @@ export default function Home() {
           <Link href="/login" className="text-sm font-medium">
             Login
           </Link>
-          <Button className="bg-green-500 hover:bg-green-600">Prueba Ahora</Button>
+          <button className="btn-green">Prueba Ahora</button>
         </div>
       </nav>
 
@@ -42,8 +40,8 @@ export default function Home() {
             Reduce el tiempo de análisis financiero, visualiza tus márgenes de ganancia en segundos y toma decisiones
             más inteligentes sin necesidad de conocimientos contables avanzados.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in ">
-              <ClientButton />
+          <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in">
+            <ClientButton />
           </div>
         </div>
         <div className="flex items-center justify-center">
@@ -87,10 +85,12 @@ export default function Home() {
 
       {/* Main Features */}
       <section className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">La mejor solución contable para pequeños negocios</h2>
-          <p className="text-zinc-600 mb-8">Beneficios clave para optimizar tu tiempo y finanzas</p>
-          <p className="text-zinc-600 mb-12 max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="features-title text-2xl sm:text-3xl font-bold mb-4">
+            La mejor solución contable para pequeños negocios
+          </h2>
+          <p className="features-subtitle text-zinc-600 mb-8">Beneficios clave para optimizar tu tiempo y finanzas</p>
+          <p className="features-description text-zinc-600 mb-12">
             Automatiza y simplifica la gestión financiera de tu empresa. Optimiza tu tiempo y toma decisiones más
             inteligentes con nuestra plataforma de contabilidad simplificada.
           </p>
@@ -128,11 +128,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-12 text-center italic text-zinc-700">
-          <p>
+        <div className="max-w-4xl mx-auto mt-12">
+          <p className="features-note text-zinc-700">
             No automatizar tu análisis financiero podría estar costándole mucho más a tu negocio de lo que imaginas.
           </p>
-          <p className="mt-2">
+          <p className="features-note text-zinc-700 mt-2">
             Las decisiones poco informadas aumentan los gastos, reducen los márgenes y te alejan de la rentabilidad
             óptima.
           </p>
@@ -192,7 +192,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button className="bg-green-500 hover:bg-green-600 w-full sm:w-auto">¡Regístrate Ahora!</Button>
+          <button className="btn-green">¡Regístrate Ahora!</button>
         </div>
       </section>
 
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-8">
           <div>
             <h3 className="font-medium mb-4">Redes</h3>
-            <ul className="space-y-2">
+            <ul>
               <li>
                 <Link href="#" className="text-zinc-400 hover:text-white">
                   LinkedIn
@@ -222,7 +222,7 @@ export default function Home() {
 
           <div>
             <h3 className="font-medium mb-4">Contacto</h3>
-            <ul className="space-y-2">
+            <ul>
               <li className="text-zinc-400">57-3193099393</li>
               <li className="text-zinc-400">info@plataforma.edu.co</li>
             </ul>
@@ -230,7 +230,7 @@ export default function Home() {
 
           <div>
             <h3 className="font-medium mb-4">Producto</h3>
-            <ul className="space-y-2">
+            <ul>
               <li>
                 <Link href="#" className="text-zinc-400 hover:text-white">
                   Visualizador de métricas
@@ -246,7 +246,7 @@ export default function Home() {
 
           <div>
             <h3 className="font-medium mb-4">Industria</h3>
-            <ul className="space-y-2">
+            <ul>
               <li>
                 <Link href="#" className="text-zinc-400 hover:text-white">
                   Negocios pequeños
