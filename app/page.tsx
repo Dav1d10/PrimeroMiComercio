@@ -1,8 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-// Importa tus nuevos iconos
 import { Lock, SquareArrowUpRight, Hand } from "lucide-react"
-
 import { ClientButton } from "@/app/clientButton"
 import TestimonialSlider from "@/components/testimonial-slider"
 
@@ -48,11 +46,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Ejemplo de imagen en el Hero */}
+        {/* Imagen en el Hero */}
         <div className="flex items-center justify-center">
           <div className="relative w-full max-w-md h-80 bg-zinc-700 rounded-lg overflow-hidden">
             <Image
-              src="/images/IMAGEN1.jpg"
+              src="/images/IMAGEN1.jpg" // Ajusta la ruta
               alt="Ilustración financiera"
               fill
               className="object-cover"
@@ -61,16 +59,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Main Features */}
-      <section className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
+      {/* Main Features (Oscuro) */}
+      <section className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-zinc-900 text-zinc-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="features-title text-2xl sm:text-3xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             La mejor solución contable para pequeños negocios
           </h2>
-          <p className="features-subtitle text-zinc-600 mb-8">
+          <p className="text-zinc-400 mb-8">
             Beneficios clave para optimizar tu tiempo y finanzas
           </p>
-          <p className="features-description text-zinc-600 mb-12">
+          <p className="text-zinc-400 mb-12">
             Automatiza y simplifica la gestión financiera de tu empresa. Optimiza tu tiempo y toma decisiones más
             inteligentes con nuestra plataforma de contabilidad simplificada.
           </p>
@@ -78,84 +76,86 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {/* Análisis Financiero Automático */}
-          <div className="p-6 border border-zinc-200 rounded-lg">
-            <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <SquareArrowUpRight className="h-6 w-6 text-zinc-700" />
+          <div className="p-6 border border-zinc-700 rounded-lg">
+            {/* <--- Cambiamos a bg-zinc-700 para el círculo ---> */}
+            <div className="w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center mb-4">
+              <SquareArrowUpRight className="h-6 w-6 text-zinc-100" />
             </div>
             <h3 className="font-medium text-lg mb-2">Análisis Financiero Automático</h3>
-            <p className="text-zinc-600">
+            <p className="text-zinc-400">
               Reduce el tiempo de análisis financiero en un 80%. Toma decisiones más rápidas con datos precisos.
             </p>
           </div>
 
           {/* Seguridad y Confianza */}
-          <div className="p-6 border border-zinc-200 rounded-lg">
-            <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <Lock className="h-6 w-6 text-zinc-700" />
+          <div className="p-6 border border-zinc-700 rounded-lg">
+            <div className="w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center mb-4">
+              <Lock className="h-6 w-6 text-zinc-100" />
             </div>
             <h3 className="font-medium text-lg mb-2">Seguridad y Confianza</h3>
-            <p className="text-zinc-600">
+            <p className="text-zinc-400">
               Protección avanzada para garantizar la integridad y seguridad de tus datos financieros.
             </p>
           </div>
 
           {/* Sin Conocimientos Contables */}
-          <div className="p-6 border border-zinc-200 rounded-lg">
-            <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-              <Hand className="h-6 w-6 text-zinc-700" />
+          <div className="p-6 border border-zinc-700 rounded-lg">
+            <div className="w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center mb-4">
+              <Hand className="h-6 w-6 text-zinc-100" />
             </div>
             <h3 className="font-medium text-lg mb-2">Sin Conocimientos Contables</h3>
-            <p className="text-zinc-600">
+            <p className="text-zinc-400">
               Interfaz intuitiva diseñada para emprendedores sin experiencia en contabilidad.
             </p>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto mt-12">
-          <p className="features-note text-zinc-700">
+          <p className="text-zinc-200">
             No automatizar tu análisis financiero podría costarte hasta un 10% de tus ingresos mensuales.
           </p>
-          <p className="features-note text-zinc-700 mt-2">
+          <p className="text-zinc-200 mt-2">
             Las decisiones poco informadas aumentan los gastos, reducen los márgenes y te alejan de la rentabilidad
             óptima.
           </p>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonios" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-zinc-900">
-        {/* Aquí aparece el slider con 3 imágenes que cambian */}
+      {/* Testimonials (Oscuro) */}
+      <section id="testimonios" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-black">
         <TestimonialSlider />
       </section>
 
-      {/* How it Works */}
-      <section id="funcionalidades" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-white text-black">
+      {/* How it Works (Oscuro) */}
+      <section id="funcionalidades" className="py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-zinc-900 text-zinc-100">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 md:mb-12">Cómo Funciona</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="space-y-8">
             <div className="relative pl-8 border-l-4 border-green-500">
               <h3 className="font-medium text-lg mb-1">Regístrate en menos de 2 minutos</h3>
-              <p className="text-zinc-600">Crea una cuenta y accede de inmediato a tu plataforma personalizada.</p>
+              <p className="text-zinc-400">
+                Crea una cuenta y accede de inmediato a tu plataforma personalizada.
+              </p>
             </div>
 
             <div className="pl-8">
               <h3 className="font-medium text-lg mb-1">Conecta tus cuentas bancarias y datos financieros</h3>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 Vincula tus cuentas para obtener datos en tiempo real y gestionar tu contabilidad sin esfuerzo.
               </p>
             </div>
 
             <div className="pl-8">
               <h3 className="font-medium text-lg mb-1">Empieza a visualizar métricas y reportes automáticos</h3>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 Obtén reportes financieros detallados y optimiza tu rentabilidad con datos claros.
               </p>
             </div>
 
             <div className="pl-8">
               <h3 className="font-medium text-lg mb-1">Personaliza tus reportes y dashboards</h3>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 Ajusta los informes a tus necesidades y visualiza métricas en tiempo real para mejorar la toma de
                 decisiones financieras.
               </p>
@@ -163,7 +163,7 @@ export default function Home() {
 
             <div className="pl-8">
               <h3 className="font-medium text-lg mb-1">Accede desde cualquier dispositivo</h3>
-              <p className="text-zinc-600">
+              <p className="text-zinc-400">
                 Utiliza la aplicación desde tu computadora o móvil, sincronizando tu información financiera sin
                 complicaciones.
               </p>
@@ -171,7 +171,15 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="w-full max-w-md h-80 bg-zinc-100 rounded-lg"></div>
+            {/* ImagenPrueba en oscuro */}
+            <div className="relative w-full max-w-md h-80 bg-zinc-800 rounded-lg overflow-hidden">
+              <Image
+                src="/images/ImagenPrueba.jpg" // Ajusta la ruta si cambia
+                alt="Vista de formulario"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 
