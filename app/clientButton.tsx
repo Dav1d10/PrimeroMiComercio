@@ -2,7 +2,7 @@
 
 export function ClientButton() {
   return (
-    <button onClick={() => (window.location.href = "chatbot.html")} className="btn-start">
+    <button onClick={() => (window.location.href = "/register")} className="btn-start">
       Empieza Ahora
       <svg
         xmlns="http://www.w3.org/2000/svg"

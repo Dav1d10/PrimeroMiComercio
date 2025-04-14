@@ -11,12 +11,11 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [showPassword, setShowPassword] = useState(false);  // Estado para mostrar la contraseña
+  const [showPassword, setShowPassword] = useState(false);
 
-  // Redirige si ya hay sesión
   useEffect(() => {
     if (session) {
-      router.push("/chatbot.html");  // Redirigir al chatbot.html si ya está autenticado
+      router.push("/chatbot.html");
     }
   }, [session, router]);
 
@@ -29,13 +28,12 @@ export default function LoginPage() {
       email,
       password,
       redirect: false,
-      callbackUrl: "/chatbot.html",  // Redirigir a chatbot.html después del login
+      callbackUrl: "/chatbot.html",
     });
 
     if (result?.error) {
       setError("Credenciales inválidas. Inténtalo de nuevo.");
     } else if (result?.ok) {
-      // Redirigir al chatbot.html directamente después de inicio de sesión exitoso
       router.push("/chatbot.html");
     }
   }
@@ -51,31 +49,48 @@ export default function LoginPage() {
           onChange={(e) => setEmail(e.target.value)}
           required
           className={styles.input}
-          placeholder="holamundo@email.com"  // Placeholder para el email
+          placeholder="tu@email.com"
         />
+
         <br />
+
         <label>Contraseña</label>
         <input
-          type={showPassword ? "text" : "password"}  // Cambiar entre password y text
+          type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
           className={styles.input}
-          placeholder="********"  // Placeholder para la contraseña
+          placeholder="********"
         />
+
         <div className={styles.showPassword}>
           <input
             type="checkbox"
             id="showPassword"
             checked={showPassword}
-            onChange={() => setShowPassword(!showPassword)}  // Alterna la visibilidad de la contraseña
+            onChange={() => setShowPassword(!showPassword)}
           />
           <label htmlFor="showPassword">Mostrar Contraseña</label>
         </div>
+
         <br />
-        <button type="submit" className={styles.submitButton}>Iniciar sesión</button>
+
+        <button type="submit" className={styles.submitButton}>
+          Iniciar sesión
+        </button>
       </form>
+
       {error && <p className={styles.error}>{error}</p>}
+
+      {/* Agrega este párrafo debajo del botón de inicio de sesión */}
+      <p className={styles.signUpNotice}>
+        ¿No tienes una cuenta?{" "}
+        <a href="/register" className={styles.signUpLink}>
+          Registrate
+        </a>
+      </p>
     </div>
   );
 }
+

@@ -1,5 +1,5 @@
-/* login.module.css */
-.loginContainer {
+/* register.module.css */
+.registerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,15 +8,15 @@
     background-color: #000000;
     color: white;
     font-family: Arial, sans-serif;
-  }
+}
   
-  .title {
+.title {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+}
   
-  .form {
+.form {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Alinea los elementos a la izquierda */
@@ -25,16 +25,16 @@
     border-radius: 10px;
     width: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+}
   
-  .label {
+.label {
     font-size: 1rem;
     margin-bottom: 8px;
     color: white;
     align-self: flex-start; /* Alinea las etiquetas a la izquierda */
-  }
+}
   
-  .input {
+.input {
     width: 100%; /* Ajusta el tamaño del campo de entrada */
     padding: 12px;
     margin: 8px 0;
@@ -43,14 +43,14 @@
     background-color: #171717;
     color: white;
     font-size: 1rem;
-  }
+}
   
-  .input:focus {
+.input:focus {
     outline: none;
     border: 1px solid #22c55e;
-  }
+}
   
-  .submitButton {
+.submitButton {
     background-color: #22c55e;
     color: white;
     padding: 12px;
@@ -60,43 +60,41 @@
     font-size: 1rem;
     width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
     margin-top: 10px;
-  }
+}
   
-  .submitButton:hover {
+.submitButton:hover {
     background-color: #3bb143;
-  }
+}
   
-  .error {
+.error {
     color: red;
     font-size: 0.9rem;
     margin-top: 10px;
-  }
+}
 
-  .showPassword {
+.showPassword {
     display: flex;
     align-items: center;
     color: #b9baba;
     font-size: 0.9rem;
-  }
+}
   
-  .showPassword input {
+.showPassword input {
     margin-right: 8px;
-  }
+}
 
-  .signUpNotice {
+.loginNotice {
     margin-top: 16px;
-    color: #b9baba; /* Un gris claro, por ejemplo */
+    color: #b9baba; 
     font-size: 1rem;
   }
   
-  .signUpLink {
-    color: #FFFFFF; /* Mismo verde que tu botón, si quieres */
+  .loginLink {
+    color: #FFFFFF; 
     text-decoration: none;
     margin-left: 4px;
   }
   
-  .signUpLink:hover {
+  .loginLink:hover {
     color: #3bb143;
   }
-  
-  
