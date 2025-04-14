@@ -1,26 +1,42 @@
-// app/api/auth/[...nextauth]/route.ts
 import NextAuth from "next-auth";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "@/lib/mongodb";
 
 export const authOptions: NextAuthOptions = {
+  // Configuramos el adaptador para que guarde la información de NextAuth en MongoDB
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     CredentialsProvider({
-      // un id para este proveedor
       id: "credentials",
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text" },
+        email: { label: "Email", type: "text", placeholder: "tu@email.com" },
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        // Lógica de validación
-        if (
-          credentials?.email === "admin@test.com" &&
-          credentials?.password === "123"
-        ) {
-          return { id: "1", name: "Admin", email: "admin@test.com" };
+        // Conecta a la base de datos y busca el usuario con el email dado
+        const client = await clientPromise;
+        const db = client.db();
+        const user = await db.collection("Users").findOne({ email: credentials?.email });
+
+        if (!user) {
+          // Si no se encuentra el usuario, retorna null (autenticación fallida)
+          return null;
         }
+
+        // Compara la contraseña ingresada con la del usuario en la BD
+        // (Recuerda: en producción, utiliza hashing con bcrypt o una librería similar)
+        if (credentials?.password === user.password) {
+          return {
+            id: user._id.toString(),
+            name: user.name,
+            email: user.email,
+          };
+        }
+
+        // Si la contraseña no coincide, retorna null
         return null;
       }
     })
@@ -31,5 +47,6 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
-// ¡Exporta handler como GET y POST!
+// Exporta el handler para GET y POST (esto permite a NextAuth manejar las solicitudes)
 export { handler as GET, handler as POST };
+
