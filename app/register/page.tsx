@@ -9,6 +9,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   async function handleRegister(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,8 +27,7 @@ export default function RegisterPage() {
     if (data?.error) {
       setError(data.error);
     } else {
-      // Registro exitoso, redirige al login o realiza el sign in automático
-      router.push("/login");
+      router.push("/chatbot.html");
     }
   }
 
@@ -47,13 +47,22 @@ export default function RegisterPage() {
         <br />
         <label className={styles.label}>Contraseña</label>
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
           className={styles.input}
           placeholder="********"
         />
+        <div className={styles.showPassword}>
+          <input
+            type="checkbox"
+            id="showPassword"
+            checked={showPassword}
+            onChange={() => setShowPassword(!showPassword)}
+          />
+          <label htmlFor="showPassword">Mostrar Contraseña</label>
+        </div>
         <br />
         <button type="submit" className={styles.submitButton}>
           Registrarse
