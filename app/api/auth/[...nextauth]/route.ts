@@ -1,11 +1,13 @@
+// app/api/auth/[...nextauth]/route.ts
 import NextAuth from "next-auth";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
+import { compare } from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
-  // Configuramos el adaptador para que guarde la información de NextAuth en MongoDB
+  // Configura el adaptador para usar MongoDB
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     CredentialsProvider({
@@ -13,33 +15,34 @@ export const authOptions: NextAuthOptions = {
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text", placeholder: "tu@email.com" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // Conecta a la base de datos y busca el usuario con el email dado
-        const client = await clientPromise;
-        const db = client.db();
-        const user = await db.collection("Users").findOne({ email: credentials?.email });
-
-        if (!user) {
-          // Si no se encuentra el usuario, retorna null (autenticación fallida)
+        // Verifica que se recibieron las credenciales
+        if (!credentials || !credentials.email || !credentials.password) {
           return null;
         }
 
-        // Compara la contraseña ingresada con la del usuario en la BD
-        // (Recuerda: en producción, utiliza hashing con bcrypt o una librería similar)
-        if (credentials?.password === user.password) {
-          return {
-            id: user._id.toString(),
-            name: user.name,
-            email: user.email,
-          };
-        }
+        // Conecta a la base de datos
+        const client = await clientPromise;
+        const db = client.db();
 
-        // Si la contraseña no coincide, retorna null
-        return null;
-      }
-    })
+        // Busca el usuario en la colección "Users" por su email
+        const user = await db.collection("Users").findOne({ email: credentials.email });
+        if (!user || !user.password) return null;
+
+        // Compara la contraseña ingresada en texto plano con el hash almacenado
+        const isValid = await compare(credentials.password, user.password as string);
+        if (!isValid) return null;
+
+        // Retorna el usuario autenticado
+        return {
+          id: user._id.toString(),
+          email: user.email,
+          name: user.name, // Si el campo name no existe, se puede omitir o asignar un valor por defecto
+        };
+      },
+    }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
   session: { strategy: "jwt" },
@@ -47,6 +50,8 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
-// Exporta el handler para GET y POST (esto permite a NextAuth manejar las solicitudes)
+// Exporta el handler para GET y POST, permitiendo a NextAuth manejar las solicitudes
 export { handler as GET, handler as POST };
+
+
 

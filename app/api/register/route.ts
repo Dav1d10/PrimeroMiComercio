@@ -1,7 +1,7 @@
 // app/api/register/route.ts
 import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
-// import { hash } from "bcrypt"; // <-- Usar esto si deseas encriptar la contraseña
+import { hash } from "bcryptjs"; // Usando bcryptjs para encriptar la contraseña
 
 export async function POST(request: Request) {
   try {
@@ -20,14 +20,13 @@ export async function POST(request: Request) {
       );
     }
 
-    // 3. (Opcional) Hashear la contraseña:
-    // const hashedPassword = await hash(password, 10);
+    // 3. Hashear la contraseña usando bcryptjs:
+    const hashedPassword = await hash(password, 10);
 
     // 4. Guardar el usuario en la base de datos
     const result = await db.collection("Users").insertOne({
       email,
-      // password: hashedPassword,
-      password, // (NO USAR en producción, solo a modo de ejemplo)
+      password: hashedPassword,
       createdAt: new Date(),
     });
 
@@ -38,3 +37,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Error al registrar usuario" }, { status: 500 });
   }
 }
+

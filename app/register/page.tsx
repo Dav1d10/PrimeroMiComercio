@@ -27,7 +27,7 @@ export default function RegisterPage() {
     if (data?.error) {
       setError(data.error);
     } else {
-      router.push("/chatbot.html");
+      router.push("/login");
     }
   }
 
