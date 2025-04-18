@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Lock, SquareArrowUpRight, Hand } from "lucide-react"
 import { ClientButton } from "@/app/clientButton"
+import { TestButton } from "@/app/TestButton"
 import TestimonialSlider from "@/components/testimonial-slider"
 
 export default function Home() {
@@ -186,7 +187,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-12">
-            <ClientButton />
+            <TestButton />
           </div>
         </section>
 
