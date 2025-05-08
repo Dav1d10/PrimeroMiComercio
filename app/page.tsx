@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Lock, SquareArrowUpRight, Hand } from "lucide-react"
 import { ClientButton } from "@/app/clientButton"
 import { TestButton } from "@/app/TestButton"
+import { TestButton2 } from "@/app/TestButton2"
 import TestimonialSlider from "@/components/testimonial-slider"
 
 export default function Home() {
@@ -189,6 +190,10 @@ export default function Home() {
           <div className="flex justify-center mt-12">
             <TestButton />
           </div>
+          <div className="flex justify-center mt-12">
+            <TestButton2 />
+          </div>
+          
         </section>
 
         {/* Footer */}

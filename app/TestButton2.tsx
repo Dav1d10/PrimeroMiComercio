@@ -1,12 +1,10 @@
-"use client"; // 👈 Client Component
+"use client";
+import { useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
-
-export function TestButton() {
+export function TestButton2() {
   return (
-    <button onClick={() => (window.location.href =  'chatbot.html')} className="btn-start">
-      Empieza Ahora
+    <button onClick={() => (window.location.href =  '/dialogflow-chat')} className="btn-start">
+      Pruebas
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
