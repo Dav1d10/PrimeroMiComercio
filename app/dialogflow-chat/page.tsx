@@ -2,14 +2,14 @@ import  {UserGuide} from "@/components/userguide";
 
 export default function ChatPage() {
   return (
-    <div className="flex h-screen w-full bg-gray-50">
+    <div className="w-full p-6 bg-white rounded-lg">
       {/* Left sidebar with user guide */}
-      <div className="w-1/8 bg-white p-4 border-r border-gray-200 overflow-y-auto">
+      <div className="w-56 p-2 border-r border-gray-200">
         <UserGuide />
       </div>
 
       {/* Chat interface container */}
-      <div className="w-80% relative">
+      <div className="w-full relative">
         {/* Google Dialogflow Chat */}
         <div
           id="dialogflow-container"
@@ -38,16 +38,16 @@ export default function ChatPage() {
     --df-messenger-message-user-background: #d3e3fd;
     --df-messenger-message-bot-background: #fff;
     top: 0;
-    left: 40%;
+    left: 38%;
     right: 0;
     bottom: 0;
-    width: 80% ;
+    width: 62% ;
     height: 100vh !important;
     border-radius: 0 !important;
   }
   
   df-messenger-chat {
-    height: calc(100vh - 60px) !important;
+    height: 80% !important;
   }
   
   df-messenger-user-input {
@@ -55,8 +55,8 @@ export default function ChatPage() {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 80% !important;
+    max-width: 80% !important;
   }
 </style>
             

@@ -92,3 +92,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .bg-custom-gray {
+    background-color: #f3f4f6 !important; /* Un gris claro que resalte */
+  }
+}
