@@ -15,7 +15,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (session) {
-      router.push("/dialogflow-chat");
+      router.push("/chatbot.html");
     }
   }, [session, router]);
 
@@ -28,13 +28,13 @@ export default function LoginPage() {
       email,
       password,
       redirect: false,
-      callbackUrl: "/dialogflow-chat",
+      callbackUrl: "/chatbot.html",
     });
 
     if (result?.error) {
       setError("Credenciales inválidas. Inténtalo de nuevo.");
     } else if (result?.ok) {
-      router.push("/dialogflow-chat");
+      router.push("/chatbot.html");
     }
   }
 

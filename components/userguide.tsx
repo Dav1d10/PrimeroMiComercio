@@ -12,7 +12,7 @@ export const UserGuide = () => {
       <div className="bg-white p-4 rounded-md shadow-sm border border-zinc-200 mx-4 mb-4">
         <p className="text-zinc-700 mb-3">
           Bienvenido al asistente de Costo y Rentabilidad. <br />
-          Esta herramienta está diseñada para ayudar a los pequeños empresarios a calcular <br />fácilmente costos y rentabilidad de sus productos o servicios.
+          Esta herramienta está diseñada para ayudar a los pequeños empresarios <br /> a calcular fácilmente rentabilidad de sus productos o servicios.
         </p>
 
         <h2 className="text-lg font-semibold text-zinc-800 mt-4">¿Qué cálculos realiza el Asistente?</h2>
