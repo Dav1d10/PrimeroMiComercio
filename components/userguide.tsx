@@ -1,36 +1,47 @@
 import { BookOpen } from "lucide-react";
 
+
 export const UserGuide = () => {
   return (
-    <div className="w-56 rounded-lg bg-custom-gray border border-zinc-200 overflow-hidden"> {/* Cambiado a w-64 (16rem = 256px) */}
-      <div className="flex items-center mb-4 p-4"> {/* Añadido p-4 para padding interno */}
+    <div className="w-64 rounded-lg bg-custom-gray border border-zinc-200 overflow-hidden">
+      <div className="flex items-center mb-4 p-4">
         <BookOpen className="h-6 w-6 text-zinc-600 mr-3" />
         <h1 className="text-xl font-bold text-zinc-800">Guía de Usuario</h1>
       </div>
-      
-      <div className="bg-white p-4 rounded-md shadow-sm border border-zinc-200 mx-4 mb-4"> {/* Eliminado w-1/4 y añadido mx-4 para margen horizontal */}
-        <p className="text-zinc-700 mb-3"> {/* Añadido mb-3 para margen inferior */}
-          Bienvenido al asistente de Costo y Rentabilidad. <br /> Aquí algunas instrucciones:
+
+      <div className="bg-white p-4 rounded-md shadow-sm border border-zinc-200 mx-4 mb-4">
+        <p className="text-zinc-700 mb-3">
+          Bienvenido al asistente de Costo y Rentabilidad. <br />
+          Esta herramienta está diseñada para ayudar a los pequeños empresarios a calcular <br />fácilmente costos y rentabilidad de sus productos o servicios.
         </p>
-        
-        <ol className="space-y-3 list-decimal list-inside pl-5 marker:text-zinc-600">
-          <li className="text-zinc-600 text-sm"> {/* Añadido text-sm para reducir tamaño de texto */}
-            El asistente te guiará sobre la información que necesite para hacer cálculos.
-          </li>
-          <li className="text-zinc-600 text-sm">
-            En caso de dudas sobre conceptos, el asistente te puede ayudar. <br /> Solo pregúntale: "Me puedes explicar..."
-          </li>
-          <li className="text-zinc-600 text-sm">
-            Puedes hacer preguntas específicas sobre cálculos.
-          </li>
-          <li className="text-zinc-600 text-sm">
-            Para cerrar sesión, utiliza el enlace en la esquina superior derecha.
-          </li>
-        </ol>
-        
-        <p className="text-zinc-500 text-xs italic mt-4"> {/* Cambiado a text-xs y añadido mt-4 */}
-          *Si necesitas ayuda adicional, escribe "ayuda" en el chat.*
+
+        <h2 className="text-lg font-semibold text-zinc-800 mt-4">¿Qué cálculos realiza el Asistente?</h2>
+        <ul className="list-disc list-inside text-zinc-600 text-sm mt-2 space-y-1">
+          <li>Cálculo de Costos Totales (fijos y variables).</li>
+          <li>Cálculo del Precio de Venta Sugerido.</li>
+          <li>Cálculo de Rentabilidad (margen y porcentaje).</li>
+          <li>Análisis de Punto de Equilibrio.</li>
+        </ul>
+
+        <h2 className="text-lg font-semibold text-zinc-800 mt-4">¿Cómo ingresar información?</h2>
+        <p className="text-zinc-600 text-sm mt-2">
+          El asistente te guiará paso a paso. Debes responder de manera clara y precisa. <br />
+          - Para costos fijos: ingresa el valor mensual. <br />
+          - Para costos variables: ingresa el valor por unidad producida.
         </p>
+
+        <h2 className="text-lg font-semibold text-zinc-800 mt-4">Consultas y Ayuda</h2>
+        <p className="text-zinc-600 text-sm mt-2">
+          Si tienes dudas sobre conceptos, pregunta: "Me puedes explicar [concepto]?". <br />
+          Para preguntas específicas: "¿Cómo calculo el punto de equilibrio?".
+        </p>
+
+        <h2 className="text-lg font-semibold text-zinc-800 mt-4">Cierre de Sesión</h2>
+        <p className="text-zinc-600 text-sm mt-2">
+          Utiliza el enlace en la esquina superior derecha de la pantalla.
+        </p>
+
+        <p className="text-zinc-500 text-xs italic mt-4">*Si necesitas ayuda adicional, escribe "ayuda" en el chat.*</p>
       </div>
     </div>
   );
