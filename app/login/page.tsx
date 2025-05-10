@@ -13,9 +13,10 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  // Si ya hay sesión, redirige automáticamente
   useEffect(() => {
     if (session) {
-      router.push("/chatbot.html");
+      router.push("/dialogflow-chat");
     }
   }, [session, router]);
 
@@ -28,13 +29,13 @@ export default function LoginPage() {
       email,
       password,
       redirect: false,
-      callbackUrl: "/chatbot.html",
+      callbackUrl: "/dialogflow-chat", 
     });
 
     if (result?.error) {
       setError("Credenciales inválidas. Inténtalo de nuevo.");
     } else if (result?.ok) {
-      router.push("/chatbot.html");
+      router.push("/dialogflow-chat"); 
     }
   }
 
@@ -83,11 +84,10 @@ export default function LoginPage() {
 
       {error && <p className={styles.error}>{error}</p>}
 
-      {/* Agrega este párrafo debajo del botón de inicio de sesión */}
       <p className={styles.signUpNotice}>
         ¿No tienes una cuenta?{" "}
         <a href="/register" className={styles.signUpLink}>
-          Registrate
+          Regístrate
         </a>
       </p>
     </div>
