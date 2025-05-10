@@ -2,7 +2,7 @@ import  {UserGuide} from "@/components/userguide";
 
 export default function ChatPage() {
   return (
-    <div className="w-full p-6 bg-white rounded-lg">
+    <div className="w-full p-6 bg-black rounded-lg">
       {/* Left sidebar with user guide */}
       <div className="w-56 p-2 border-r border-gray-200">
         <UserGuide />
