@@ -186,10 +186,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <div className="flex justify-center mt-12">
-            <TestButton />
-          </div>
           <div className="flex justify-center mt-12">
             <TestButton2 />
           </div>
