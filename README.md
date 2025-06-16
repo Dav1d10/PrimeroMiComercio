@@ -8,9 +8,13 @@ Users can create an account, securely log in, and immediately access a built-in 
 
 <img src="public/images/landing page.jpg" alt="Landing preview" width="700"/>
 
+## Visit the website
+
+[Launch Primero mi Comercio Web App](https://page-pmc.onrender.com)
+
 ## Project Documentation
 
-- [Project Pitch Presentation](https://www.canva.com/design/DAGqdGC5agU/fW2DqXZrm3aKBlXuERm8_w/edit?utm_content=DAGqdGC5agU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Project Pitch Presentation](https://www.canva.com/design/DAGqdGC5agU/fW2DqXZrm3aKBlXuERm8_w/edit?utm_content=DAGqdGC5agU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Tech Stack
 
@@ -19,9 +23,37 @@ Users can create an account, securely log in, and immediately access a built-in 
 - **Data Persistence:** Implemented using MongoDB, a NoSQL document-oriented database.
 - **Agent:** Google Cloud and Vertex AI
 
-## Visit the website
+## Prerequisites
 
-[Launch Primero mi Comercio Web App](https://page-pmc.onrender.com)
+Before running the project, make sure you have the following installed and set up:
+
+- **Node.js** v16.x or higher
+- **npm** (included with Node.js)
+```bash
+  npm install
+  ```
+- Create a file `.env.local` in the project's root with the following variable
+```bash
+  # MongoDB Atlas connection URI
+  MONGODB_URI="mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  ```
+- The Database must have a collection named `"Users"`
+
+## How to run 
+
+1. Clone the repository
+```bash
+  git clone https://github.com/Dav1d10/PrimeroMiComercio.git
+  ```
+2. Open a terminal and navigate to the main folder
+```bash
+  cd PrimeroMiComercio
+  ```
+3. Run the application
+```bash
+  npm run dev
+  ```
+4. The application will start on `http://localhost:3000`
 
 ## Collaborators
 
