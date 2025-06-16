@@ -27,7 +27,10 @@ Users can create an account, securely log in, and immediately access a built-in 
 
 Before running the project, make sure you have the following installed and set up:
 
-- **Node.js** v16.x or higher
+- **Node.js** v16.x or higher, check with
+```bash
+  node --version
+  ```
 - **npm** (included with Node.js)
 ```bash
   npm install
