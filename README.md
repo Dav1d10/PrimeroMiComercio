@@ -45,7 +45,7 @@ Before running the project, make sure you have the following installed and set u
 ```bash
   git clone https://github.com/Dav1d10/PrimeroMiComercio.git
   ```
-2. Open a terminal and navigate to the main folder
+2. Open a terminal and navigate to the main directory
 ```bash
   cd PrimeroMiComercio
   ```
