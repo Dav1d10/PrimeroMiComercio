@@ -6,6 +6,8 @@ This web application project was developed as part of the **ISIS2007 Diseño de 
 
 Users can create an account, securely log in, and immediately access a built-in Dialogflow chatbot that provides real-time analysis, answers questions on demand, and delivers tailored recommendations for pricing strategies, expense reduction, and “what-if” forecasting. Whether you’re tracking historical trends or exploring future scenarios, it offers clear, conversational insights that helps users make smarter, data-driven decisions every day.
 
+<img src="public/images/landing page.jpg" alt="Landing preview" width="700"/>
+
 ## Project Documentation
 
 - [Project Pitch Presentation](https://www.canva.com/design/DAGqdGC5agU/fW2DqXZrm3aKBlXuERm8_w/edit?utm_content=DAGqdGC5agU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
