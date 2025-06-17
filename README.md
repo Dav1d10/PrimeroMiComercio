@@ -38,7 +38,7 @@ Before running the project, make sure you have the following installed and set u
 - Create a file `.env.local` in the project's root with the following variable
 ```bash
   # MongoDB Atlas connection URI
-  MONGODB_URI="mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  MONGODB_URI="mongodb+srv://<user>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"
   ```
 - The Database must have a collection named `"Users"`
 
